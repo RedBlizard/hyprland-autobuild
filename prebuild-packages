@@ -6,9 +6,6 @@ echo "%wheel         ALL = (ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 # set path for makepkg package saving in one folder
 echo PKGDEST=/home/build/packages >> /etc/makepkg.conf
 
-# install yay and git
-pacman -Sy --noconfirm --needed git yay
-
 # create user
 useradd -m -G wheel -s /bin/bash build
 
