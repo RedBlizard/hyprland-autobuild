@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+mkdir /
 # clone ISO sources and join the path:
 git clone https://github.com/killajoe/EndeavourOS-Community-hyprland-ISO.git
 
@@ -26,6 +27,27 @@ wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/
 # Make sure build scripts are executable
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
-# current downgrade mesa for calamares lag in vms:
-# wget https://archive.archlinux.org/packages/m/mesa/mesa-22.1.7-1-x86_64.pkg.tar.zst
-# nmv mesa-22.1.7-1-x86_64.pkg.tar.zst "airootfs/root/packages/"
+# building AUR packages and make sur esaving them into airootfs/root/packages:
+echo "%wheel         ALL = (ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+pacman -Syy
+pacman -S --noconfirm --needed git yay
+useradd -m -G wheel -s /bin/bash build
+
+echo PKGDEST=/home/build/packages >> /etc/makepkg.conf
+mkdir /home/build/packages
+chown -R build:build /home/build/packages
+
+# Build liveuser skel
+chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
+cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
+sudo -u build makepkg -f
+cd ..
+cd ..
+cd ..
+sudo -u build yay -S --noconfirm cava
+sudo -u build yay -S --noconfirm nwg-look-bin
+sudo -u build yay -S --noconfirm wlogout
+sudo -u build yay -S --noconfirm swww
+sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
+cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages
