@@ -8,7 +8,7 @@ useradd -m -G wheel -s /bin/bash build
 
 echo PKGDEST=/home/build/packages >> /etc/makepkg.conf
 mkdir /home/build/packages
-chown -R build:buil /home/build/packages
+chown -R build:build /home/build/packages
 # Build liveuser skel
 #get_pkg() {
 #    pacman -Syw $1 --noconfirm --cachedir EndeavourOS-Community-hyprland-ISO/airootfs/root/packages
