@@ -1,8 +1,8 @@
-# ISO Development testing ISO`S
+# ISO playground testing Hyprland ISO`S
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
 
-[![Build EndeavourOS devel ISO](https://github.com/endeavouros-team/iso-autobuild/actions/workflows/autobuild.yml/badge.svg)](https://github.com/endeavouros-team/iso-autobuild/actions/workflows/autobuild.yml)
+[![Build Community ISO](https://github.com/killajoe/hyprland-autobuild/actions/workflows/autobuild.yml/badge.svg)](https://github.com/killajoe/hyprland-autobuild/actions/workflows/autobuild.yml)
 
 GitHub action and needed scripts:
 
