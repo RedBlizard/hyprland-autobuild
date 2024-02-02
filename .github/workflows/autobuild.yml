@@ -24,16 +24,19 @@ jobs:
         run: echo "NOW=$(date +'%Y-%m-%d_%H-%M')" >> $GITHUB_ENV
                       
       - name: Add EndeavourOS Repo
-        run: bash add-EndeavourOS.sh
+        run: bash add-EndeavourOS
         
       - name: Update packages and install archiso
-        run: "pacman -Syu --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools wget sudo base-devel curl lftp"
-        
+        run: "pacman -Syu --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools wget sudo base-devel curl lftp yay"
+      
+      - name: Add EndeavourOS Repo
+        run: bash prebuild-packages
+      
       - name: preparations to build ISO
-        run: bash prepare-action.sh
+        run: bash prepare-action
         
       - name: Build ISO
-        run: bash build-iso.sh
+        run: bash build-iso
 
       - name: Add hour to release and tarball
         run: "cp EndeavourOS-Community-hyprland-ISO/*.log EndeavourOS-Community-hyprland-ISO/out/ && cd EndeavourOS-Community-hyprland-ISO/out && tar -czvf EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log"
