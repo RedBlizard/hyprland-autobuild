@@ -38,17 +38,14 @@ echo PKGDEST=/home/build/packages >> /etc/makepkg.conf
 mkdir /home/build/packages
 chown -R build:build /home/build/packages
 
+#sudo -u build yay -S --noconfirm cava
+#sudo -u build yay -S --noconfirm nwg-look-bin
+sudo -u build yay -S --noconfirm wlogout
+#sudo -u build yay -S --noconfirm swww
+#sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
+cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages
+
 # Build liveuser skel
 chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 sudo -u build makepkg -f
-cd ..
-cd ..
-cd ..
-cd ..
-#sudo -u build yay -S --noconfirm cava
-#sudo -u build yay -S --noconfirm nwg-look-bin
-#sudo -u build yay -S --noconfirm wlogout
-sudo -u build yay -S --noconfirm swww
-#sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
-cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages
