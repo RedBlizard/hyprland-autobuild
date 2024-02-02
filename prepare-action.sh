@@ -45,9 +45,10 @@ sudo -u build makepkg -f
 cd ..
 cd ..
 cd ..
-sudo -u build yay -S --noconfirm cava
-sudo -u build yay -S --noconfirm nwg-look-bin
-sudo -u build yay -S --noconfirm wlogout
+cd ..
+#sudo -u build yay -S --noconfirm cava
+#sudo -u build yay -S --noconfirm nwg-look-bin
+#sudo -u build yay -S --noconfirm wlogout
 sudo -u build yay -S --noconfirm swww
-sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
+#sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
 cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages
