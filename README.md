@@ -6,4 +6,4 @@
 
 GitHub action and needed scripts:
 
-action that builds the ISO directly from latest EndeavourOS-ISO sources (git) together with latest development package for calamares (installer).
+* action that builds the ISO directly from latest [EndeavourOS-Community-hyprland-ISO](https://github.com/killajoe/EndeavourOS-Community-hyprland-ISO/tree/main) sources (git) together with some packages from AUR
