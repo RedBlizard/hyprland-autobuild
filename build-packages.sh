@@ -20,6 +20,10 @@ chown -R build:build /home/build/packages
 chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 sudo -u build makepkg -f
-cd /
-sudo -u  build yay -S --noconfirm - < /packages-AUR.x86_64
+cd /home/build
+sudo -u build yay -S --noconfirm cava
+sudo -u build yay -S --noconfirm nwg-look-bin
+sudo -u build yay -S --noconfirm wlogout
+sudo -u build yay -S --noconfirm swww
+sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
 cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages/
