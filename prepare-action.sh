@@ -8,6 +8,7 @@ git clone https://github.com/killajoe/EndeavourOS-Community-hyprland-ISO.git
 # copy live session Wallpaper into ISO structure:
 cp livewall.png EndeavourOS-Community-hyprland-ISO/airootfs/root/
 cp  pacman.conf EndeavourOS-Community-hyprland-ISO/airootfs/etc/pacman.conf
+cp packages-AUR.x86_64 /packages-AUR.x86_64
 
 # run preperations inside ISO structure
 cd EndeavourOS-Community-hyprland-ISO
