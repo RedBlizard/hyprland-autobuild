@@ -20,7 +20,7 @@ chown -R build:build /home/build/packages
 chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 sudo -u build makepkg -f
-cd /home/build
+cd /
 sudo -u build yay -S --noconfirm cava
 sudo -u build yay -S --noconfirm nwg-look-bin
 sudo -u build yay -S --noconfirm wlogout
