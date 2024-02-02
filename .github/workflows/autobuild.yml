@@ -32,7 +32,7 @@ jobs:
       - name: preparations to build ISO
         run: bash prepare-action.sh
         
-      - name: create normal user (build) for Build Calamares git packages and prepare actions
+      - name: create build user to get yay working and build packages used on the ISO
         run: bash build-packages.sh
         
       - name: Build ISO
