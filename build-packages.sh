@@ -6,5 +6,18 @@ mkdir /usr/share/packages
 pacman -Syy
 pacman -S --noconfirm --needed git yay
 useradd -m -G wheel -s /bin/bash build
+
+# Build liveuser skel
+#get_pkg() {
+#    pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages"
+#}
+
+#get_pkg "eos-settings-plasma"
+
+#pacman -Syddw --noconfirm --cachedir "airootfs/root/packages" eos-settings-plasma
+chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
+cd "airootfs/root/endeavouros-skel-liveuser"
+sudo -u build makepkg -f
+
 sudo -u  build yay -S --noconfirm - < /packages-AUR.x86_64
 cp /usr/share/packages/* airootfs/root/packages/
