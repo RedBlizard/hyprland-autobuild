@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
 # clone ISO sources and join the path:
-git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
+git clone https://github.com/killajoe/EndeavourOS-Community-hyprland-ISO.git
 
 # patch packages to not install Calamares packages from repository:
 #patch EndeavourOS-ISO/packages.x86_64 < packages.x86_64.patch
 
-# patch profiledef.sh -- set isoname to unstable:
-patch EndeavourOS-ISO/profiledef.sh < profiledef.sh.patch
-
-# patch run_before_squashfs.sh to remove github folder before squashfs:
-# patch EndeavourOS-ISO/run_before_squashfs.sh < run_before_squashfs.sh.patch
-
 # copy live session Wallpaper into ISO structure:
-cp livewall.png EndeavourOS-ISO/airootfs/root/
-cp  pacman.conf EndeavourOS-ISO/airootfs/etc/pacman.conf
+cp livewall.png EndeavourOS-Community-hyprland-ISO/airootfs/root/
+cp  pacman.conf EndeavourOS-Community-hyprland-ISO/airootfs/etc/pacman.conf
 
 # run preperations inside ISO structure
-cd EndeavourOS-ISO
+cd EndeavourOS-Community-hyprland-ISO
 
 # Copy packages from Build Calamares git packages into iso structure:
 #cp /home/build/packages/* airootfs/root/packages/
@@ -38,7 +32,7 @@ chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
 #get_pkg "eos-settings-plasma"
 
-pacman -Syddw --noconfirm --cachedir "airootfs/root/packages" eos-settings-plasma
+#pacman -Syddw --noconfirm --cachedir "airootfs/root/packages" eos-settings-plasma
 
 # current downgrade mesa for calamares lag in vms:
 # wget https://archive.archlinux.org/packages/m/mesa/mesa-22.1.7-1-x86_64.pkg.tar.zst
