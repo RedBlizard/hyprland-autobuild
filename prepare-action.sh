@@ -18,14 +18,14 @@ cd $BUILDDIR/EndeavourOS-Community-hyprland-ISO
 #cp /home/build/packages/* airootfs/root/packages/
 
 # Get mirrorlist for offline installs
-mkdir "airootfs/etc/pacman.d"
+mkdir "$BUILDDIR/EndeavourOS-Community-hyprland-ISO/airootfs/etc/pacman.d"
 wget -qN --show-progress -P "$BUILDDIR/EndeavourOS-Community-hyprland-ISO/airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
 
 # Get wallpaper for installed system
 wget -qN --show-progress -P "$BUILDDIR/EndeavourOS-Community-hyprland-ISO/airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/master/backgrounds/endeavouros-wallpaper.png"
 
 # Make sure build scripts are executable
-chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
+chmod +x "$BUILDDIR/EndeavourOS-Community-hyprland-ISO/"{"mkarchiso","run_before_squashfs.sh"}
 
 # building AUR packages and make sur esaving them into airootfs/root/packages:
 echo "%wheel         ALL = (ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
