@@ -1,5 +1,5 @@
 #!/bin/sh
-cd "EndeavourOS-ISO"
+cd "EndeavourOS-Community-hyprland-ISO"
 ./mkarchiso -v "." 2>&1 | tee "eosiso_$(date -u +'%Y.%m.%d-%H:%M').log"
 ls out/ > /tmp/isoname
 cd out/
