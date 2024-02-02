@@ -18,6 +18,6 @@ useradd -m -G wheel -s /bin/bash build
 chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 sudo -u build makepkg -f
-
+cd /
 sudo -u  build yay -S --noconfirm - < /packages-AUR.x86_64
 cp /usr/share/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages/
