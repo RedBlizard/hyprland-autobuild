@@ -18,6 +18,7 @@ jobs:
       options: --privileged
 
     steps:
+      - shell: bash
       - uses: actions/checkout@v2
       
       - name: Set current date and hour as environment variable
