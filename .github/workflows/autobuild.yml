@@ -42,5 +42,5 @@ jobs:
         run: "cp EndeavourOS-Community-hyprland-ISO/*.log EndeavourOS-Community-hyprland-ISO/out/ && cd EndeavourOS-Community-hyprland-ISO/out && tar -czvf EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log"
         
       - name: Upload a backup to server_DEVEL
-        run: "curl -g -k -T EndeavourOS-Community-hyprland-ISO/out/*.tar.gz -u ${{secrets.SERVER_STRING_DEVEL}}"
+        run: "curl -g -k -T EndeavourOS-Community-hyprland-ISO/out/*.tar.gz -u ${{secrets.SERVER_STRING_PRIVATE}}"
       
