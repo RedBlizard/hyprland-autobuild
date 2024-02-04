@@ -52,10 +52,16 @@ jobs:
     
       - name: Build ISO
         run: bash build-iso
-
-      - name: Add hour to release and tarball
-        run: "cp EndeavourOS-Community-hyprland-ISO/*.log EndeavourOS-Community-hyprland-ISO/out/ && cd EndeavourOS-Community-hyprland-ISO/out && tar -czvf EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log"
-        
-      - name: Upload a backup to server_DEVEL
-        run: "curl -g -k -T EndeavourOS-Community-hyprland-ISO/out/*-iso.tar.gz -u ${{ secrets.SERVER_STRING_PRIVATE }}"
       
+      - name: Upload binaries to release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.ACCESS_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "EHCE ${{ env.NOW }}"
+          files: |
+                 EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-aa
+                 EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-ab
+                 EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-ac
+          id: "EHCE"
