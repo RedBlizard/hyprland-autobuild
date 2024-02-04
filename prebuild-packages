@@ -20,6 +20,7 @@ sudo -u build yay -S --noconfirm swww
 sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
 sudo cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages/
 sudo pacman -Rsc --noconfirm networkmanager-dmenu-bluetoothfix-git swww wlogout nwg-look-bin cava
+pacman -Syu --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools sudo base-devel curl lftp
 
 # Build liveuser skel
 sudo cp -a /etc/makepkg.conf.bak /etc/makepkg.conf
