@@ -40,9 +40,6 @@ jobs:
                       
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS
-        
-      - name: Update packages and install archiso
-        run: "pacman -Syu --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools wget sudo base-devel curl lftp yay"
 
       - name: preparations to build ISO
         run: bash prepare-action
