@@ -64,4 +64,5 @@ jobs:
                  EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-aa
                  EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-ab
                  EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.split-ac
+                 EndeavourOS-ISO/out/EndeavourOS-Community-hyprland-${{ env.NOW }}-iso.sha512sum
           id: "EHCE"
