@@ -1,4 +1,4 @@
-name: Build EndeavourOS devel ISO
+name: Build EndeavourOS CE Hyprland ISO
 
 on:
   schedule:
