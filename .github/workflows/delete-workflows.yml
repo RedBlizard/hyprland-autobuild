@@ -1,3 +1,6 @@
+name: clean up workflows
+on:
+  workflow_dispatch:
 jobs:
   delete_runs:
     runs-on: ubuntu-latest
@@ -9,5 +12,7 @@ jobs:
           run_conclusions: |
             cancelled
             skipped
+            failure
+            timed_out
           save_period: '06:00:00'
           save_min_runs_number: 0
