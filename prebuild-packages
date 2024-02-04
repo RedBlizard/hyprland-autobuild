@@ -25,4 +25,4 @@ sudo cp -a /etc/makepkg.conf.bak /etc/makepkg.conf
 sudo chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 sudo -u build makepkg -f
-sudo userdel -R build
+sudo userdel -f build
