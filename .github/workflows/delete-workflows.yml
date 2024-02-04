@@ -2,8 +2,8 @@ name: Delete workflow runs
   uses: dmvict/clean-workflow-runs@v1.0.0
   with:
     token: ${{ secrets.PRIVATE_GITHUB_TOKEN }}
-    repo: user/repo
-    workflow_id: TheWorkflow.yml
+    repo: killajoe/hyprland-autobuild
+    workflow_id: autobuild.yml
     branch: main
     run_conclusions: |
       failure
