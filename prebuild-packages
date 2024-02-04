@@ -13,11 +13,11 @@ useradd -m -G wheel -s /bin/bash build
 mkdir /home/build/packages
 chown -R build:build /home/build/packages
 
-sudo -u build yay -Sw --noconfirm cava
-sudo -u build yay -Sw --noconfirm nwg-look-bin
-sudo -u build yay -Sw --noconfirm wlogout
-sudo -u build yay -Sw --noconfirm swww
-sudo -u build yay -Sw --noconfirm networkmanager-dmenu-bluetoothfix-git
+sudo -u build yay -S --noconfirm cava
+sudo -u build yay -S --noconfirm nwg-look-bin
+sudo -u build yay -S --noconfirm wlogout
+sudo -u build yay -S --noconfirm swww
+sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
 sudo cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages/
 sudo pacman -Rsc --noconfirm networkmanager-dmenu-bluetoothfix-git swww wlogout nwg-look-bin cava
 
