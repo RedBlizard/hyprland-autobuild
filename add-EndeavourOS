@@ -12,4 +12,4 @@ pacman -Sy --noconfirm endeavouros-keyring
 pacman -S --noconfirm endeavouros-mirrorlist
 pacman -S --noconfirm reflector 
 reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
-pacman -S --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools sudo base-devel curl lftp yay
+pacman -Syu --noconfirm --needed archiso mkinitcpio-archiso git squashfs-tools sudo base-devel curl lftp yay
