@@ -19,10 +19,10 @@ sudo -u build yay -S --noconfirm wlogout
 sudo -u build yay -S --noconfirm swww
 sudo -u build yay -S --noconfirm networkmanager-dmenu-bluetoothfix-git
 sudo cp /home/build/packages/* EndeavourOS-Community-hyprland-ISO/airootfs/root/packages/
-sudo rm -R /home/build/.cache/yay /home/build/packages
 
 # Build liveuser skel
 sudo cp -a /etc/makepkg.conf.bak /etc/makepkg.conf
 sudo chown -R build:build EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
 cd EndeavourOS-Community-hyprland-ISO/airootfs/root/endeavouros-skel-liveuser
+sudo userdel -R build
 sudo -u build makepkg -f
