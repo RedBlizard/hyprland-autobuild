@@ -5,7 +5,6 @@ ls out/ > /tmp/isoname
 cd out/
 isoname=$(cat /tmp/isoname)
 sha512sum $isoname > $isoname.sha512sum
-tar -czvf $isoname.tar.gz *.sha512sum *.iso *.log 
 split -b1024M $isoname $isoname.split-
 files=$(ls)
 echo $files
